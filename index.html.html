@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 4th Monthsary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fff5f8, #ffe6ee);
+  text-align: center;
+  cursor: pointer;
+}
+
+/* 💖 HEARTS */
+.heart {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0.6;
+  animation: floatHearts linear infinite;
+  text-shadow: 0 0 15px rgba(200,0,80,0.6);
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(110vh); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* 💕 TITLES */
+
+/* ✨ FLOATING ANIMATION */
+@keyframes floatUpDown {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 💕 MAIN TITLE */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 70px;
+  color: #d63384;
+
+  /* ✅ slow floating */
+  animation: floatUpDown 4s ease-in-out infinite;
+
+  transition: all 0.3s ease;
+}
+
+/* 💕 SUBTITLE */
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
+  color: #d63384;
+
+  animation: floatUpDown 4.5s ease-in-out infinite;
+
+  transition: all 0.3s ease;
+}
+
+/* 💖 HOVER EFFECT */
+h1:hover, h2:hover {
+  transform: translateY(-15px) scale(1.08); 
+  color: #c2185b;
+
+  text-shadow:
+    0 0 10px rgba(255, 100, 150, 0.6),
+    0 0 20px rgba(255, 150, 200, 0.4);
+}
+
+/* 💌 CARD */
+.card {
+  max-width: 600px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #444;
+}
+
+/* 🌸 FLOWER */
+.flower {
+  width: 130px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* 📸 SLIDESHOW */
+.slideshow {
+  width: 620px;
+  height: 640px;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* blurred background */
+.slide-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(25px) brightness(0.7);
+  transform: scale(1.2);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* main image */
+.slide {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3">
+</audio>
+
+<p style="color:#d63384">Click anywhere to start music 💖</p>
+
+<script>
+document.addEventListener("click", function () {
+  document.getElementById("music").play();
+}, { once: true });
+</script>
+
+<!-- 💖 HEARTS -->
+<script>
+for (let i = 0; i < 120; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "♥";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.top = Math.random() * 100 + "vh";
+  heart.style.fontSize = (30 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+  let colors = ["#d63384","#c2185b","#b03060"];
+  heart.style.color = colors[Math.floor(Math.random()*3)];
+
+  document.body.appendChild(heart);
+}
+</script>
+
+<h1>Happy 4th Monthsary</h1>
+<h2>My greatest gift</h2>
+
+<img src="flower.png" class="flower">
+
+<!-- 💌 MESSAGE -->
+<div class="card">
+Mi Amore,<br><br>
+Happy 4th Monthsary.<br><br>
+
+ I never thought a day like this would come into my life — a day where I look forward to tomorrow because I know I get to see you again. Every single day, I find myself longing for you. Even the smallest misunderstanding between us breaks me, because I could never truly be mad at you. I never want to be the reason there are tears in your eyes… and yet sometimes, the very thing I fear the most is what I end up doing. For that, I am truly sorry.<br><br>
+
+    I am always thankful that I met you — an unexpected person who brought so much joy into my life. Every moment with you is the greatest gift I have ever received. You help me forget the things I struggle with, and you give me the strength to keep moving forward… toward a better future, hopefully with you in it.<br><br>
+
+    I’m not asking for you to feel the same way that I do, but please know that I will always be here for you. I will support you in every way I can. Please don’t be too hard on yourself — I’m here, baby. You can always count on me.<br><br>
+
+    I love you, always… <br><br>
+"There is no greater gift than you."
+</div>
+
+<!-- 📸 SLIDESHOW -->
+<div class="slideshow">
+
+  <!-- ✅ REPEAT FORMAT -->
+  <img src="Slideshow/pic1.jpg" class="slide-bg">
+  <img src="Slideshow/pic1.jpg" class="slide">
+
+  <img src="Slideshow/pic2.jpeg" class="slide-bg">
+  <img src="Slideshow/pic2.jpeg" class="slide">
+
+  <img src="Slideshow/pic3.jpeg" class="slide-bg">
+  <img src="Slideshow/pic3.jpeg" class="slide">
+
+  <img src="Slideshow/pic4.jpeg" class="slide-bg">
+  <img src="Slideshow/pic4.jpeg" class="slide">
+
+  <img src="Slideshow/pic5.jpeg" class="slide-bg">
+  <img src="Slideshow/pic5.jpeg" class="slide">
+
+  <img src="Slideshow/pic6.jpeg" class="slide-bg">
+  <img src="Slideshow/pic6.jpeg" class="slide">
+
+  <img src="Slideshow/pic7.jpeg" class="slide-bg">
+  <img src="Slideshow/pic7.jpeg" class="slide">
+
+  <img src="Slideshow/pic8.jpeg" class="slide-bg">
+  <img src="Slideshow/pic8.jpeg" class="slide">
+
+  <img src="Slideshow/pic9.jpeg" class="slide-bg">
+  <img src="Slideshow/pic9.jpeg" class="slide">
+
+  <img src="Slideshow/pic10.jpeg" class="slide-bg">
+  <img src="Slideshow/pic10.jpeg" class="slide">
+
+  <!-- continue same pattern... up to pic26 -->
+
+</div>
+
+<script>
+let slideIndex = 0;
+let slides = document.getElementsByClassName("slide");
+let backgrounds = document.getElementsByClassName("slide-bg");
+
+function showSlides() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.opacity = "0";
+    backgrounds[i].style.opacity = "0";
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+
+  slides[slideIndex - 1].style.opacity = "1";
+  backgrounds[slideIndex - 1].style.opacity = "1";
+
+  setTimeout(showSlides, 3000);
+}
+
+showSlides();
+</script>
+
+</body>
+</html>
+``
